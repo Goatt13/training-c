@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class playercontroller : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
 
