@@ -488,6 +488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 714478720}
+  moveSpeed: 5
+  playerMoveDirection: {x: 0, y: 0, z: 0}
 --- !u!50 &714478720
 Rigidbody2D:
   serializedVersion: 5
