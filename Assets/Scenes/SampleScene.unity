@@ -396,6 +396,8 @@ GameObject:
   m_Component:
   - component: {fileID: 714478718}
   - component: {fileID: 714478717}
+  - component: {fileID: 714478720}
+  - component: {fileID: 714478719}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -473,6 +475,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &714478719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714478716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6e5ff94762c9645bda0084caba9afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 714478720}
+--- !u!50 &714478720
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714478716}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &781719441
 GameObject:
   m_ObjectHideFlags: 0
@@ -6478,7 +6520,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9377,8 +9419,8 @@ Tilemap:
   - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: 37f2c286688120748aee4c67eae1476c, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: -1426629215, guid: 0a84f622992061f46a9edf9e3e7a8375, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 22
     m_Data: {fileID: 1411977242, guid: 0a84f622992061f46a9edf9e3e7a8375, type: 3}
   - m_RefCount: 10
@@ -9391,8 +9433,8 @@ Tilemap:
     m_Data: {fileID: 1867628391, guid: 0a84f622992061f46a9edf9e3e7a8375, type: 3}
   - m_RefCount: 220
     m_Data: {fileID: -925125503, guid: 0a84f622992061f46a9edf9e3e7a8375, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1426629215, guid: 0a84f622992061f46a9edf9e3e7a8375, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -376826983, guid: 0a84f622992061f46a9edf9e3e7a8375, type: 3}
   - m_RefCount: 10
