@@ -18,7 +18,14 @@ public class EnemyAI : MonoBehaviour
         // Direction: player position - own position
         Vector2 direction = (player.position - transform.position).normalized;
 
+        // Rotation
+        if (direction != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
         // Movement: move in that direction at constant speed
-        transform.position += (Vector3)direction * moveSpeed * Time.deltaTime;
+            transform.position += (Vector3)direction * moveSpeed * Time.deltaTime;
     }
 }
