@@ -149,9 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5010838120154406610, guid: 1044671fe8d4d4dfe8738ace262f686b, type: 3}
-  enemyCount: 3
+  enemyCount: 5
   spawnAreaMin: {x: -11, y: -5}
-  spawnAreaMax: {x: 0, y: -5}
+  spawnAreaMax: {x: 11, y: 5}
 --- !u!4 &2561433
 Transform:
   m_ObjectHideFlags: 0
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 714478719}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
