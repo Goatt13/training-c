@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float rotationSpeed = 720f; // Degrees/second
     private Vector2 moveDirection;
 
     void Update()
@@ -15,8 +16,9 @@ public class PlayerMovement : MonoBehaviour
         // Rotate only if we are going in one direction
         if (moveDirection != Vector2.zero)
         {
-            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            float targetAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            float angle = Mathf.LerpAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime / 360f);
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
     }
 
