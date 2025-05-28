@@ -3,29 +3,35 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float rotationSpeed = 720f; // Degrees/second
-    private Vector2 moveDirection;
+    private Vector2 moveInput;
+    private Rigidbody2D rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
+        // Movement inputs with keyboard (WASD / Arrow keys)
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
-
-        moveDirection = new Vector2(inputX, inputY).normalized;
-
-        // Rotate only if we are going in one direction
-        if (moveDirection != Vector2.zero)
-        {
-            float targetAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            float angle = Mathf.LerpAngle(transform.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime / 360f);
-            transform.rotation = Quaternion.Euler(0f, 0f, angle);
-        }
+        moveInput = new Vector2(inputX, inputY).normalized;
     }
 
     void FixedUpdate()
     {
-        // Go to whatever direction at a constant speed
-        Vector2 newPos = (Vector2)transform.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
-        transform.position = newPos;
+        // Motion implementation
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+
+        // Rotation towards mouse direction
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 lookDir = mousePos - transform.position;
+
+        if (lookDir != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+            rb.rotation = angle;
+        }
     }
 }

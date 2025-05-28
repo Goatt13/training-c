@@ -475,8 +475,8 @@ GameObject:
   m_Component:
   - component: {fileID: 714478718}
   - component: {fileID: 714478717}
-  - component: {fileID: 714478720}
   - component: {fileID: 714478719}
+  - component: {fileID: 714478720}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -568,7 +568,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  rotationSpeed: 980
 --- !u!50 &714478720
 Rigidbody2D:
   serializedVersion: 5
@@ -584,7 +583,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
