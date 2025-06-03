@@ -8,6 +8,7 @@ public class CursorFollow : MonoBehaviour
     {
         mainCamera = Camera.main;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined; // Lock the cursor to the game window
     }
 
     void Update()
